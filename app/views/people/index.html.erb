@@ -1,0 +1,8 @@
+<h1> All THE Peeps </h1>
+<p>New People? <%= link_to 'Add Peoples', new_person_path %></p>
+<% @people.each do |person| %>
+ <h2><%= "#{person.first_name} #{person.last_name}" %></h2>
+  <%= link_to 'Show People', person_path(person) %>
+  <%= link_to 'Edit People', edit_person_path(person) %>
+  <%= link_to 'Destroy', person, method: :delete %>
+<% end %>
